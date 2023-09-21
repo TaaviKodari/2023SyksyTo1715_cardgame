@@ -1,5 +1,21 @@
 .card{
     width: 120px;
     height: 200px;
-    background-color: blue;
+    background-color: ghostwhite;
+    border-radius: 8px;
+    border: 4px solid brown;
+    box-shadow: 1px 1px 4px 1px gray;
+    overflow: hidden;
+}
+
+
+.stat-list{
+    margin:0;
+    padding:0 8px;
+}
+
+.stat-list-item{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
 }
