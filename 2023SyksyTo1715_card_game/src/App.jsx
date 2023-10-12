@@ -18,7 +18,20 @@ const opponentCard = {
 export default function App(){
 
   function compareCards(){
-    console.log("button clicked!");
+    const playerStat = playerCard.stats[0];
+    const opponentStat = opponentCard.stats[0];
+
+    let result = "";
+
+    if( playerStat.value === opponentStat.value){
+      result = "Draw";
+    }
+    else if(playerStat.value > opponentStat.value){
+      result = "Win";
+    }else{
+      result = "Loss";
+    }
+    console.log(result);
   }
 
   return(
