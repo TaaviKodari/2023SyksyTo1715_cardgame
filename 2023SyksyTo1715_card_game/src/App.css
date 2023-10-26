@@ -19,3 +19,9 @@
     display: flex;
     justify-content: space-between;
 }
+
+.center-area{
+    text-align: center;
+    align-self: center;
+    min-width: 10vw;
+}
