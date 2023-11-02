@@ -18,13 +18,31 @@ const opponentCard = {
                                     ]
 }
 
+const createCard = index =>({
+  image: 'http://placekitten.com/120/100?image=' + index,
+  stats: [{name:'Cuteness', value: getRandomInt(1, 999)},
+          {name:'Speed', value: getRandomInt(1, 999)},
+          {name:'Weight', value: getRandomInt(1, 999)}],
+  id:crypto.randomUUID()
+});
+
+const deck = Array(16).fill(null).map((_,index) => createCard(index));
+const half = Math.ceil(deck.length / 2);
+const dealCards =()=>{
+  return{
+    player: deck.slice(0,half),
+    opponent: deck.slice(half)
+  };
+};
+
 export default function App(){
 
-  const[result, setResult] = useState('');
-
+  const [result, setResult] = useState('');
+  const [cards, setCards] = useState(dealCards);
+  
   function compareCards(){
-    const playerStat = playerCard.stats[0];
-    const opponentStat = opponentCard.stats[0];
+    const playerStat = cards.player[0].stats[0];
+    const opponentStat = cards.opponent[0].stats[0];
 
     if( playerStat.value === opponentStat.value){
      setResult("Draw");
@@ -41,12 +59,14 @@ export default function App(){
     <>
       <h1>Hello world!</h1>
       <div className='game'>
-        <Card card={playerCard}/>
+        <Card card={cards.player[0]}/>
         <div className='center-area'>
           <p>{result || 'Press the button'}</p>
           <button onClick={compareCards} type="button">Play</button>
         </div>
-        <Card card={opponentCard}/>
+        <Card card={cards.opponent[0]}/>
+
+        {console.log(dealCards())}
       </div>
     </>
   );
