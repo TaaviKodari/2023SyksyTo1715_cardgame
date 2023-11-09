@@ -59,14 +59,28 @@ export default function App(){
     <>
       <h1>Hello world!</h1>
       <div className='game'>
-        <Card card={cards.player[0]}/>
+        
+        <ul className='card-list'>
+          {cards.player.map(pCard =>(
+            <li className='card-list-item player' key={pCard.id}>
+              <Card card={pCard}/>
+            </li>
+          ))}
+        </ul>
+        
         <div className='center-area'>
           <p>{result || 'Press the button'}</p>
           <button onClick={compareCards} type="button">Play</button>
         </div>
-        <Card card={cards.opponent[0]}/>
 
-        {console.log(dealCards())}
+        <ul className='card-list'>
+          {cards.opponent.map(oCard =>(
+            <li className='card-list-item opponent' key={oCard.id}>
+              <Card card={oCard}/>
+            </li>
+          ))}
+        </ul>
+
       </div>
     </>
   );
