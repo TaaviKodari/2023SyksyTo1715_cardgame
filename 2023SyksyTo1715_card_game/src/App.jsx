@@ -70,10 +70,10 @@ export default function App(){
         
         <div className='center-area'>
           <p>{result || 'Press the button'}</p>
-          <button onClick={compareCards} type="button">Play</button>
+          <button className='play-button' onClick={compareCards} type="button">Play</button>
         </div>
 
-        <ul className='card-list'>
+        <ul className='card-list opponent'>
           {cards.opponent.map(oCard =>(
             <li className='card-list-item opponent' key={oCard.id}>
               <Card card={oCard}/>

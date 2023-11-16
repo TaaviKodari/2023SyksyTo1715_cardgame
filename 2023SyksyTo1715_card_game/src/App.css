@@ -35,9 +35,22 @@
     gap: 10px;
 }
 .card-list-item.player{
-    margin-left: calc(2vw - 140px);
+    margin-left: calc(6vw - 170px);
 }
 
 .card-list-item.opponent{
-    margin-right: calc(2vw - 140px);
+    margin-right: calc(6vw - 170px);
+    direction: ltr; 
+}
+
+.card-list.opponent{
+    direction: rtl;
+}
+
+.play-button{
+    width: 80px;
+    height: 40px;
+    align-self: center;
+    font-size: larger;
+    font-weight: bold;
 }
