@@ -27,6 +27,7 @@
 
 .card-list{
     display: flex;
+    flex-direction: row-reverse;
 }
 
 .game{
@@ -53,4 +54,8 @@
     align-self: center;
     font-size: larger;
     font-weight: bold;
+}
+
+.card.back{
+    background-color: rgb(127, 124, 124) ;
 }

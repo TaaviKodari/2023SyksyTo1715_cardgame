@@ -2,6 +2,7 @@ import Card from './components/Card'
 import './App.css'
 import { useState } from 'react'
 import PlayButton from './components/PlayButton';
+
 const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min +1)+min);
 
 const playerCard = {
@@ -70,9 +71,9 @@ export default function App(){
       <div className='game'>
         
         <ul className='card-list'>
-          {cards.player.map(pCard =>(
+          {cards.player.map((pCard, index) =>(
             <li className='card-list-item player' key={pCard.id}>
-              <Card card={pCard}/>
+              <Card card={index === 0 ? pCard : null}/>
             </li>
           ))}
         </ul>
