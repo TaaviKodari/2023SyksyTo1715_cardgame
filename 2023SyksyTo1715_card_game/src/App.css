@@ -59,3 +59,8 @@
 .card.back{
     background-color: rgb(127, 124, 124) ;
 }
+
+.stat-list-item.selected{
+    outline: 1px solid black;
+    background-color: brown;
+}
